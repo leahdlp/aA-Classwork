@@ -1,0 +1,38 @@
+<%# 
+# Table name: cats
+
+#  id          :bigint           not null, primary key
+#  birth_date  :date             not null
+#  color       :string           not null
+#  name        :string           not null
+#  sex         :string(1)        not null
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+%>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2"><%= @cat.name %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>birthday: </td>
+            <td><%= @cat.birth_date %></td>
+        </tr>
+        <tr>
+            <td>color: </td>
+            <td><%= @cat.color %></td>
+        </tr>
+        <tr>
+            <td>sex: </td>
+            <td><%= @cat.sex %></td>
+        </tr>
+        <tr>
+            <td>description: </td>
+            <td><%= @cat.description %></td>
+        </tr>
+    </tbody>
+</table>

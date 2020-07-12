@@ -1,0 +1,54 @@
+<%# 
+# Table name: cats
+
+#  id          :bigint           not null, primary key
+#  birth_date  :date             not null
+#  color       :string           not null
+#  name        :string           not null
+#  sex         :string(1)        not null
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+%>
+
+<%= render 'form', cat: @cat, action: :new %>
+
+<!--
+<form action="<%= cats_url %>" method="POST">
+    <label>Name:
+        <input type="text" name="cat[name]">
+    </label>
+
+    <br>
+
+    <label>Birthday: 
+        <input type="date" name="cat[birth_date]">
+    </label>
+
+    <br>
+
+    <label for="color">Color: </label>
+    <select id="color" name="cat[color]">
+        <option disabled selected>-- Please Select --</option>
+        <option value="black">Black</option>
+        <option value="brown">Brown</option>
+        <option value="grey">Grey</option>
+        <option value="orange">Orange</option>
+        <option value="white">White</option>
+        <option value="green">Green</option>
+    </select>
+
+    <p>Please select your cat's sex:</p>
+    <input type="radio" id="M" name="cat[sex]" value="M">
+    <label for="M">M</label><br>
+    <input type="radio" id="F" name="cat[sex]" value="F">
+    <label for="F">F</label><br>
+
+    <label>Description:
+        <textarea name="cat[description]"></textarea>
+    </label>
+
+    <input type="submit" value="Create Cat">
+
+</form>
+-->
