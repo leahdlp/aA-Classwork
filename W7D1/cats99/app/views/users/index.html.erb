@@ -1,0 +1,11 @@
+<h1>USERS INDEX</h1>
+
+<a href="<%= new_user_url %>">Go to New User Form</a>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <a href="<%= new_session_url(user) %>" ><%= user.user_name %></a> 
+    </li>
+  <% end %>
+</ul>
