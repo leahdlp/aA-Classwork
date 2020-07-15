@@ -1,0 +1,27 @@
+<% if action == users_url %>
+    <%= welcome = "WELCOME TO THE NEW USER SIGN UP PAGE!!!!" %>
+<% else %>
+    <%= welcome = "WELCOME TO THE RETURNING USER LOG IN PAGE!!!!"%>
+<% end %>
+
+<form action="<%= user_url(@user) %>" method="POST">
+
+    <%= auth_token %>
+
+    <h1> WELCOME TO THE REGISTERD USER LOGIN PAGE!!!! </h1>
+
+    <label> Email: 
+        <input type="text" name="user[email]">
+    </label>
+
+    <br>
+
+    <label> Password: 
+        <input type="text" name="user[password]">
+    </label>
+
+    <br>
+
+    <input type="submit" name="sign-up" value="sign-up!">
+
+</form>

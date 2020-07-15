@@ -1,0 +1,53 @@
+<!DOCTYPE html>    
+<html>
+  <header> MUSIC APP <%#= current_user.email %> </header>
+  <head>
+    <title>Musicapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <% if flash[:errors] %>
+      <ul>
+        <% flash[:errors].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= yield %>
+  </body>
+
+  <footer>
+  <% if logged_in? %>
+    <h3>Welcome <%= current_user.email %>!</h3>
+    <form action="<%= session_url %>" method="POST">
+      <%= auth_token %>
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" name="sign-out" value="sign-out">
+    </form>
+  <% else %>
+    <a href="<%= new_user_url %>">sign-up</a>
+    <a href="<%= new_session_url %>">sign-in</a>
+  <% end %>
+  </footer>
+
+</html>
+
+<!--
+    <%# if !logged_in? %>
+      <a href="<%= new_session_url %>">Login Time</a>
+    <%# else %>
+      <h3>Welcome <%#= current_user.username %>!</h3>
+      <form action="<%#= session_url %>" method="POST">
+        <%#= auth_token %>
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Logout Time">
+      </form>
+    <%# end %>
+-->

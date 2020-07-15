@@ -1,0 +1,6 @@
+<h1>this is the show page for the signed in <%= current_user.email %> </h1>
+
+<% current_user.attributes.each do |attribute| %>
+
+    <ul><li><%= "#{attribute[0]}: #{attribute[1]}" %></li></ul>
+<% end %>
