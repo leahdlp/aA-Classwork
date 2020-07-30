@@ -1,0 +1,5 @@
+/* PHASE 9: Forms */
+.thumb {
+    display: flex;
+    justify-content: space-evenly;
+}
