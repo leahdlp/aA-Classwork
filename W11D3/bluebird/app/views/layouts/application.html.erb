@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlueBird</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <!-- create conditional tag -->
+    <!-- current_user defined in application controller with auth implementation -->
+    <% if current_user %>
+      <script>
+      // if we have a current user we want to assign them to the window, so we can
+      // access it anywhere we have access to the window
+        window.currentUser = {
+          "id": current_user.id,
+          // need returning erb tags because this is a string and needs to be
+          // evaluated as such, rather than id being an integer
+          "username": "<%= current_user.username %>",
+          "email": "<%= current_user.email %>",
+        }
+      </script>
+    <% end %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
+
+<!-- now go to entry file and update -->
